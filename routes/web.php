@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SystemuserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,22 @@ use App\Http\Controllers\SystemuserController;
 Route::get('/', [PagesController::class,'home'])->name('home');
 
 
-
+//sendmessage
 Route::get('/systemuser/message',[SystemuserController::class,'create'])->name('systemuser.message');
 Route::post('/systemuser/message',[SystemuserController::class,'createSubmit'])->name('systemuser.message');
+Route::get('/systemuser/response',[SystemuserController::class,'response'])->name('systemuser.response');
+
 Route::get('/aboutus',[PagesController::class,'aboutus'])->name('aboutus');
 Route::get('/workbased',[PagesController::class,'workbased'])->name('workbased');
 Route::get('/ourwork',[PagesController::class,'ourwork'])->name('ourwork');
+
+//login
+Route::get('/login',[LoginController::class,'Login'])->name('login');
+Route::post('/login',[LoginController::class,'loginSubmit'])->name('login');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
+//admin dash
+Route::get('/admin/admindash', [PagesController::class,'adminDash'])->name('adminDash')->middleware('ValidAdmin');
+
+Route::get('/admin/postadd',[PostController::class,'post'])->name('admin.postadd');
+Route::post('/admin/postadd',[PostController::class,'postadd'])->name('admin.postadd');

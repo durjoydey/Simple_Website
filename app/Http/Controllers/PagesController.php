@@ -18,5 +18,9 @@ class PagesController extends Controller
     public function ourwork(){
         return view('pages.ourwork');
     }
+    public function adminDash(){
+        return view('pages.admins.admindash');
+
+    }
  
 }

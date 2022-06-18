@@ -41,4 +41,9 @@ class SystemuserController extends Controller
         return "<h1>Thank you for your response</h1>";
 
     }
+    public function response(){
+
+        $systemusers = Systemuser::all();
+        return view('pages.systemusers.response')->with('systemusers',$systemusers);
+    }
 }
