@@ -35,7 +35,7 @@ Route::post('/login',[LoginController::class,'loginSubmit'])->name('login');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 //admin dash
-Route::get('/admin/admindash', [PagesController::class,'adminDash'])->name('adminDash');
+Route::get('/admin/admindash', [PagesController::class,'adminDash'])->name('adminDash')->middleware('ValidUser');
 
 Route::get('/admin/postadd',[PostController::class,'post'])->name('admin.postadd');
 Route::post('/admin/postadd',[PostController::class,'postadd'])->name('admin.postadd');

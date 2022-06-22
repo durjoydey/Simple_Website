@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <img src="/images/Cover2.svg" alt="Cover Image"/>
+  
         </div>
     </body>
 </html>

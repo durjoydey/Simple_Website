@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@if(Session::get('admin_id')) 
     <table class="table table-borded">
         <tr>
             <th>Name</th>
@@ -24,5 +25,6 @@
         @endforeach
     </table>
     <a class="btn btn-danger" href="{{route('logout')}}">Log out </a>
+    @endif
 
 @endsection

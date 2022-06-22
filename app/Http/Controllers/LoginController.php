@@ -33,7 +33,7 @@ class LoginController extends Controller
                             ->where('password',$request->password)
                             ->first();
         if($admin ){
-           
+            $request->session()->put('admin_id',$admin->id);
             $request->session()->put('username',$admin->username);
             return redirect()->route('adminDash');
         }
@@ -42,9 +42,15 @@ class LoginController extends Controller
 
     }
     public function logout(){
-        session()->forget('admin');
+        session()->forget('admin_id');
         return redirect()->route('login');
     }
+    public function adminDash(){
+
+        $admin=Admin::where('id',Session()->get('admin_id'))->first();
+
+        return view('pages.admins.admindash')->with('admin',$admin);
+   }
     
     
     
