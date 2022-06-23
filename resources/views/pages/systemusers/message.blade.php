@@ -6,7 +6,7 @@
         <h2>Get in touch</h2>
         <h1>Ready to Get Started</h1>
         <div class="col-md-4 form-group">
-            <span>Name</span>
+            <span >Name</span>
             <input type="text" name="name" value="{{old('name')}}" class="form-control">
             @error('name')
                 <span class="text-danger">{{$message}}</span>
@@ -40,6 +40,5 @@
                 <span class="text-danger">{{$message}}</span>
             @enderror
         </div>
-        <input type="submit" class="btn btn-success" value="Send Message" >
     </form>
 @endsection

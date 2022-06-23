@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 @if(Session::get('admin_id')) 
-    <form action="{{route('admin.postadd')}}" class="col-md-6" method="post">
+    <form  action="{{route('admin.postadd')}}" class="col-md-6" method="post">
         <!-- Cross Site Request Forgery-->
         {{csrf_field()}}
         
         <div class="col-md-4 form-group">
             <span>Title</span>
-            <input type="text" name="title" value="{{old('title')}}" class="form-control">
+            <input type="text"  name="title" value="{{old('title')}}" class="form-control">
             @error('title')
                 <span class="text-danger">{{$message}}</span>
             @enderror
@@ -19,7 +19,6 @@
             @enderror
         </div>
         <input type="submit" class="btn btn-success" value="Post" >
-        <a class="btn btn-danger" href="{{route('logout')}}">Logout </a>
     </form>
     @endif
 @endsection

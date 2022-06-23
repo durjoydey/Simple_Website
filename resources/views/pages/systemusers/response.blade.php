@@ -24,7 +24,6 @@
             </tr>
         @endforeach
     </table>
-    <a class="btn btn-danger" href="{{route('logout')}}">Log out </a>
     @endif
 
 @endsection
