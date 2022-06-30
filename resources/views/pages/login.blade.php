@@ -20,7 +20,7 @@
     </div> <br>
 
     <div align= "center">
-	<input type="submit" name="" value="Login">
+	<input type="submit" name="login" value="Login" class="btn btn-success">
     </div>
 </form>
 @endsection

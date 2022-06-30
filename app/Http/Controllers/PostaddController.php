@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Postadd;
+use App\Models\PostAdd;
 
-class PostController extends Controller
+class PostAddController extends Controller
 {
-    public function post(){
+    public function postadd(){
         return view('pages.admins.postadd');
     }
-    public function postadd(Request $request){
+    public function postaddsubmit(Request $request){
         $this->validate(
             $request,
             [
@@ -26,7 +26,7 @@ class PostController extends Controller
         
             ]
         );
-        $var = new Postadd();
+        $var = new PostAdd();
         $var->title = $request->title;
         $var->description = $request->description;
         $var->save();
@@ -36,12 +36,12 @@ class PostController extends Controller
     
     public function edit(Request $request){
         $id = $request->id;
-        $admins = Postadd::where('id',$id)->first();
+        $admins = PostAdd::where('id',$id)->first();
         return view('pages.admins.postaddedit')->with('admins', $admins);
 
     }
     public function editSubmit(Request $request){
-        $var = Postadd::where('id',$request->id)->first();
+        $var = PostAdd::where('id',$request->id)->first();
         $var->title= $request->title;
         $var->description = $request->description;
         $var->save();
@@ -51,11 +51,11 @@ class PostController extends Controller
     }
     public function list(){
 
-        $admins = Postadd::all();
+        $admins = PostAdd::all();
         return view('pages.admins.postaddlist')->with('admins',$admins);
     }
     public function delete(Request $request){
-        $var = Postadd::where('id',$request->id)->first();
+        $var = PostAdd::where('id',$request->id)->first();
         $var->delete();
         return redirect()->route('admin.postaddlist');
 

@@ -18,7 +18,7 @@
                 <span class="text-danger">{{$message}}</span>
             @enderror
         </div>
-        <input type="submit" class="btn btn-success" value="Post" >
+        <input type="submit" class="btn btn-primary" value="Post" >
     </form>
     @endif
 @endsection

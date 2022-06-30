@@ -13,7 +13,7 @@
                 <td><a class="btn btn-warning" href="/admin/postaddedit/{{$admin->id}}/{{$admin->title}}">Edit</a></td>
                 @endif
                 @if(Session::get('admin_id')) 
-                <td><a class="btn btn-danger" href="/admin/delete/{{$admin->id}}/{{$admin->description}}">Delete</a></td>
+                <td><a class="btn btn-danger" href="/admin/delete/{{$admin->id}}/{{$admin->title}}">Delete</a></td>
                 @endif
             </tr>
         @endforeach
