@@ -39,7 +39,7 @@ public function applysubmit(Request $request){
             'cur_sal.required'=>'Current Salary Required!',
             'exp_sal.required'=>'Expected Salary Required!',
             'cov_let.required'=>'Cover Letter Required!',
-            'res.required'=>'Cover Letter Required!'
+            'res.required'=>'Resume Required!'
         ]
     );
     $var = new Apply();

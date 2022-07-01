@@ -87,7 +87,8 @@
 
         <div>
             <span>Resume*</span>
-            <textarea name="res" value="{{old('res')}}" class="form-control"> </textarea>
+            <input type="file" name="res" value="{{old('res')}}" class="form-control"> </textarea><br>
+            <button type="submit">Upload Resume</button>
             @error('res')
                 <span class="text-danger">{{$message}}</span>
             @enderror
