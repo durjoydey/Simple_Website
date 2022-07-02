@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content') 
-    <form  action="{{route('career.apply')}}" class="col-md-6" method="post">
+    <form  action="{{route('career.apply')}}" class="col-md-6" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <h2>My Information</h2>
             <span>Your Name*</span>
@@ -86,10 +86,10 @@
         </div>
 
         <div>
+            
             <span>Resume*</span>
-            <input type="file" name="res" value="{{old('res')}}" class="form-control"> </textarea><br>
-            <button type="submit">Upload Resume</button>
-            @error('res')
+            <input type="file" name="res_path" value="{{old('res_path')}}" class="form-control"> </textarea><br>
+            @error('res_path')
                 <span class="text-danger">{{$message}}</span>
             @enderror
         </div><br>
@@ -97,4 +97,5 @@
         <input type="submit" class="btn btn-primary" value="Submit" >
         </div>
     </form>
+
 @endsection

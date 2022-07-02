@@ -56,7 +56,8 @@ Route::get('/career/jobedit/{id}/{title}',[CareerController::class,'edit']);
 Route::post('/career/jobedit',[CareerController::class,'editSubmit'])->name('career.jobedit');
 Route::get('/career/delete/{id}/{title}',[CareerController::class,'delete']);
 
+//Apply
 Route::get('/career/apply',[ApplyController::class,'apply'])->name('career.apply');
 Route::post('/career/apply',[ApplyController::class,'applysubmit'])->name('career.apply');
 
-//Route::get('/career/applylist',[ApplyController::class,'list'])->name('career.applylist');
+Route::get('/career/applylist',[ApplyController::class,'list'])->name('career.applylist');

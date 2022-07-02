@@ -14,6 +14,9 @@
 @endif
 <a class="btn btn-info" href="{{route('career.joblist')}}">Career</a>
 @if(Session::get('admin_id')) 
+<a class="btn btn-info" href="{{route('career.applylist')}}">See Applies</a>
+@endif
+@if(Session::get('admin_id')) 
 <a class="btn btn-danger" href="{{route('logout')}}">Logout </a>
 @else
 <a class="btn btn-success" href="{{route('login')}}"> Login </a>

@@ -25,7 +25,7 @@ public function applysubmit(Request $request){
             'cur_sal'=>'required',
             'exp_sal'=>'required', 
             'cov_let'=>'required', 
-            'res'=>'required'
+            'res_path'=>'required'
         ],
         [
             'name.required'=>'Your Name Required!',
@@ -39,9 +39,13 @@ public function applysubmit(Request $request){
             'cur_sal.required'=>'Current Salary Required!',
             'exp_sal.required'=>'Expected Salary Required!',
             'cov_let.required'=>'Cover Letter Required!',
-            'res.required'=>'Resume Required!'
+            'res_path.required'=>'Resume Required!'
         ]
     );
+    $newResName = time() . '-' . $request->name . '_' .
+    $request->res_path->extension();
+    $request->res_path->move(public_path('files'),$newResName);
+
     $var = new Apply();
     $var->name = $request->name;
     $var->email = $request->email;
@@ -52,9 +56,10 @@ public function applysubmit(Request $request){
     $var->not_period = $request->not_period;
     $var->cur_sal = $request->cur_sal;
     $var->exp_sal = $request->exp_sal;
-    $var->res = $request->res;
+    $var->cov_let = $request->cov_let;
+    $var->res_path = $request->res_path;
     $var->save();
-    return "Thank you for your information";
+    return "<h1>Thank you for your information</h1>";
 
 }
 /*public function edit(Request $request){
@@ -81,10 +86,10 @@ public function editSubmit(Request $request){
   
     return "Thank you for your information";
 
-}
+}*/
 public function list(){
 
-    $careers = Career::all();
-    return view('pages.careers.applylist')->with('careers',$careers);
-}*/
+    $applies = Apply::all();
+    return view('pages.careers.applylist')->with('applies',$applies);
+}
 }

@@ -17,6 +17,7 @@
             @error('title')
                 <span class="text-danger">{{$message}}</span>
             @enderror
+</div>
         <div>
             <span>Description</span>
             <textarea name="description" value="{{old('description')}}" class="form-control"> </textarea>
@@ -31,7 +32,7 @@
                 <span class="text-danger">{{$message}}</span>
             @enderror
         </div>
-        <div>
+        <div >
             <span>Responsibilities</span>
             <textarea name="responsibility" value="{{old('responsibility')}}" class="form-control"> </textarea>
             @error('responsibility')

@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('uni',1000);
             $table->string('exp',1000);    
             $table->string('int_area',30);
+            $table->string('not_period',30);
             $table->string('cur_sal',500);
             $table->string('exp_sal',1000);
             $table->string('cov_let',1000);
-            $table->string('res',1000);
             $table->timestamps();
         });
     }

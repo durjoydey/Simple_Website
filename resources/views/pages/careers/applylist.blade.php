@@ -2,39 +2,32 @@
 @section('content')
     <table class="table table-borded">
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Your Email</th>
-            <th>My Information</th>
-            <th>Your Email</th>
-            <th>Your Email</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
             <th>University</th>
-            <th>Total Years of Experience</th>
+            <th>Experience</th>
+            <th>Expertise/Interest Areas</th>
             <th>Notice Period</th>
             <th>Current Salary</th>
             <th>Expected Salary</th>
             <th>Cover Letter</th>
             <th>Resume</th>
         </tr>
-        @foreach($careers as $career)
+        @foreach($applies as $apply)
             <tr>
-                <td>{{$career->title}}</td>
-                <td>{{$career->description}}</td>
-                <td>{{$career->name}}</td>
-                <td>{{$career->email}}</td>
-                <td>{{$career->phone}}</td>
-                <td>{{$career->uni}}</td>
-                <td>{{$career->exp}}</td>
-                <td>{{$career->int_area}}</td>
-                <td>{{$career->not_period}}</td>
-                <td>{{$career->cur_sal}}</td>
-                <td>{{$career->exp_sal}}</td>
-                <td>{{$career->cov_let}}</td>
-                <td>{{$career->res}}</td>
-                <td><a class="btn btn-warning" href="/career/apply/{{$career->id}}/{{$career->title}}">Edit</a></td>
-              
+                <td>{{$apply->name}}</td>
+                <td>{{$apply->email}}</td>
+                <td>{{$apply->phone}}</td>
+                <td>{{$apply->uni}}</td>
+                <td>{{$apply->exp}}</td>
+                <td>{{$apply->int_area}}</td>
+                <td>{{$apply->not_period}}</td>
+                <td>{{$apply->cur_sal}}</td>
+                <td>{{$apply->exp_sal}}</td>
+                <td>{{$apply->cov_let}}</td>
+                <td>{{$apply->res_path}}</td>
             </tr>
         @endforeach
-    </table>
-    
+    </table> 
 @endsection

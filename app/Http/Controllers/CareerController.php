@@ -23,7 +23,7 @@ class CareerController extends Controller
                 'edu_req'=>'required', 
             ],
             [ 
-                'j_id.required'=>'Title Required!',
+                'j_id.required'=>'Job ID Required!',
                 'j_id.regex'=>'ID must be numeric!',
                 'title.required'=>'Title Required!',
                 'description.required'=>'Description Required!',
